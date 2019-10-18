@@ -16,6 +16,7 @@
 package org.japo.java.main;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -25,6 +26,10 @@ import java.util.Date;
 public class Main {
 
     public static void main(String[] args) {
+                
+        //Instancia de Calendar
+        Calendar cal = Calendar.getInstance();
+        int d, m, a;
         //Definimos ls variable date
         Date date;
         //date = llamada al tiempo en milisegundos
@@ -43,6 +48,15 @@ public class Main {
         //Out del formato de la fecha de otra, directamente desde la 1ª llamada:
         // Sin conversión a String!
         System.out.println("Fecha del sistema.3...: " + SDF.format(date));
+        
+        
+        d = cal.get(Calendar.DAY_OF_MONTH);
+        m = cal.get(Calendar.MONTH) + 1;
+        a = cal.get(Calendar.YEAR);
+        
+        System.out.printf("Fecha del sistema.(C).: %1$td/%1$tm/%1$tY %n", date);
+        
+
 
     }
 
